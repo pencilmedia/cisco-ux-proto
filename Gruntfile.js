@@ -32,8 +32,8 @@ module.exports = function (grunt) {
       main: {
         files: [
           {
-            src: 'index.html',
-            dest: 'dist/index.html'
+            src: '*.html',
+            dest: 'dist/'
           }
         ]
       },
@@ -56,6 +56,16 @@ module.exports = function (grunt) {
             dest: 'dist/assets/vendor/'
           }
         ],
+      },
+      node_modules: {
+        files: [
+          {
+            expand: true,
+            cwd: 'node_modules/',
+            src: ['**'],
+            dest: 'dist/assets/vendor/'
+          }
+        ],
       }
     },
 
@@ -64,11 +74,11 @@ module.exports = function (grunt) {
         livereload: true
       },
       html: {
-        files: ['index.html'],
+        files: ['*.html'],
         tasks: ['copy:main']
       },
       sass: {
-        files: ['assets/scss/main.scss'],
+        files: ['**/*.scss'],
         tasks: ['sass', 'cssmin']
       },
       assets: {
@@ -168,6 +178,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-npmcopy');
   grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('default', ['postcss', 'copy', 'sass', 'cssmin', 'imagemin', 'npmcopy']);
+  grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'imagemin', 'npmcopy']);
   grunt.registerTask('run', ['clean', 'default', 'connect', 'watch']);
 };

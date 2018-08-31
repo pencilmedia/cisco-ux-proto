@@ -17,6 +17,10 @@ To build execute:
 
 To test and dev
 
+    $ grunt run
+
+    OR 
+
     $ npm run start
 
     opens http://localhost:8000 in your browser.
@@ -24,3 +28,5 @@ To test and dev
 To clean build:
 
     $ npm run clean
+
+

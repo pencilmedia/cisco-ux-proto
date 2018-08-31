@@ -1,0 +1,38 @@
+/* BEGIN: common
+// -----------------------------------------------------*/
+
+html, body {
+    height: 100%;
+    font-size: $html-font-size;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+}
+
+.ux-wrapper {
+    display: grid;
+    grid-template-columns: 280px auto;
+    height: 100%;
+    overflow: hidden;
+    .ux-wrapper--sidebar {
+        min-width: 242px;
+    }
+    .ux-wrapper--content {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .ux-header, .ux-footer {
+            flex: 0 0 auto;
+        }
+        .ux-content {
+            flex: 1 1 auto;
+            position: relative;/* need this to position inner content */
+            overflow-y: auto;
+            padding: 16px;
+            background: $ux-light-gray3;
+        }
+    }
+}

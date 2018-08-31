@@ -1,0 +1,164 @@
+/* BEGIN: Buttons
+// -----------------------------------------------------*/
+
+a.btn,
+a.btn.btn--icon,
+a.btn.btn--icon.btn--small {
+    // Fixes issue where anchors used as button elements not properly aligned
+    // However, button elements themselves cannot be flex containers which means
+    // normal buttons have to use inline-block versus inline-flex :-(
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn + .btn {
+    margin-left: $aui-button-margin;
+}
+
+.btn.small + .btn.small {
+    margin-left: $aui-small-button-margin;
+}
+
+.btn {
+
+    // Default button size / color
+    @include btn-size();
+    @include btn-color(
+        $background-selected: $aui-button-background-selected,
+        $border-selected: $aui-button-border-selected,
+        $color-selected: $aui-button-color-selected
+    );
+
+    &--small {
+        @include btn-size(
+            $padding: $aui-small-button-padding,
+            $font-size: $aui-small-button-font-size,
+            $line-height: $aui-small-button-line-height,
+            $min-width: $aui-small-button-min-width,
+            $max-width: $aui-small-button-max-width,
+            $height: $aui-small-button-height
+        );
+    }
+    &--wide {
+        padding-left: $base-spacing * 3;
+        padding-right: $base-spacing * 3;
+        max-width: $aui-button-max-width;
+    }
+
+    // Generate the button colors from the global variables
+    @each $button-obj in $button-colors {
+        &--#{map-get($button-obj, name)} {
+            @include btn-color(map-get($button-obj, params)...);
+        }
+    }
+
+    &.btn--icon {
+        overflow: visible; // To allow for subtext
+        position: relative;
+        @include btn-size(
+            $height: $aui-button-icon-height,
+            $min-width: $aui-button-icon-width,
+            $max-width: $aui-button-icon-width,
+            $font-size: $aui-button-icon-font-size,
+            $padding: 0
+        );
+
+        > span[class^="icon-"] {
+            font-size: $aui-button-icon-font-size;
+        }
+
+        &.btn--small {
+            @include btn-size(
+                $height: $aui-small-button-icon-height,
+                $min-width: $aui-small-button-icon-width,
+                $max-width: $aui-small-button-icon-width,
+                $font-size: $aui-small-button-icon-font-size,
+                $padding: 0
+            );
+            > span[class^="icon-"] {
+                font-size: $aui-small-button-icon-font-size;
+            }
+            overflow: visible;
+
+            .btn__subtext {
+                top: $aui-small-button-icon-height + ($base-spacing * 0.25);
+            }
+        }
+        &.btn--large {
+            @include btn-size(
+                $height: $aui-large-button-icon-height,
+                $min-width: $aui-large-button-icon-width,
+                $max-width: $aui-large-button-icon-width,
+                $font-size: $aui-large-button-icon-font-size,
+                $padding: 0
+            );
+            > span[class^="icon-"] {
+                font-size: $aui-large-button-icon-font-size;
+            }
+            overflow: visible;
+            .btn__subtext {
+                top: $aui-large-button-icon-height + ($base-spacing * 0.25);
+            }
+        }
+
+        .btn__subtext {
+            color: $med-gray-2;
+            font-size: $xsmall-font-size;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: $aui-button-icon-height + ($base-spacing * 0.25);
+            margin: 0;
+        }
+    }
+}
+
+
+.btns,
+.btn-group {
+
+    @include btn-margin($margin: $base-btn-margin);
+    position: relative;
+    display: inline-flex;
+
+    &.btn + .btn {
+        border-right: 0 none;
+    }
+
+    > .btn {
+        min-width: 0;
+        padding-right: $base-spacing * 0.5;
+        padding-left: $base-spacing * 0.5;
+        border-radius: 0;
+        border: 1px solid $base-button-background;
+        box-shadow: none;
+
+        @each $button-obj in $button-colors {
+            &--#{map-get($button-obj, name)} {
+                border: 1px solid map-get(map-get($button-obj, params), 'group-border-color');
+            }
+        }
+
+        &:first-child {
+            padding-left: $base-spacing * 0.75;
+            border-top-left-radius: $base-button-border-radius;
+            border-bottom-left-radius: $base-button-border-radius;
+        }
+
+        &:last-child {
+            padding-right: $base-spacing * 0.75;
+            border-top-right-radius: $base-button-border-radius;
+            border-bottom-right-radius: $base-button-border-radius;
+        }
+
+        &.selected {
+            transition: all ease 0.25s;
+        }
+    }
+
+    &--compressed { @include btn-margin($margin: $base-btn-compressed-margin); }
+    &--regular    { @include btn-margin($margin: $base-btn-regular-margin); }
+    &--loose      { @include btn-margin($margin: $base-btn-loose-margin); }
+}

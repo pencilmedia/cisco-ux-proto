@@ -1,0 +1,87 @@
+/* BEGIN: var
+// -----------------------------------------------------*/
+
+$navbarHeight: 64px;
+
+
+// -----------------------------------------------------------------------------
+// Base: Colors
+
+$ux-white:                         #fff;
+$ux-black:                         #000;
+
+// Hero Colors
+$ux-cisco-blue:                    #00BCEB !default;
+$ux-indigo-blue:                   #005073 !default;
+$ux-cisco-green:                   #6ebe4a !default;
+
+// Secondary Colors
+$ux-dark-gray1:           #39393b !default;
+$ux-dark-gray2:           #58585b !default;
+$ux-medium-gray2:         #9e9ea2 !default;
+$ux-light-blue:           #f2fbfd !default;
+$ux-vibrant-blue:         #017CAD !default;
+
+// Supporting Colors
+$ux-dark-gray3:           #626469 !default;
+$ux-dark-gray4:           #7f7f86 !default;
+$ux-medium-gray4:         #b6b9bb !default;
+$ux-light-gray2:          #c6c7ca !default;
+$ux-light-gray3:          #dfdfdf !default;
+$ux-light-gray5:          #f2f2f2 !default;
+
+// Status Colors
+$ux-stat-red:           #e2231a !default;
+$ux-stat-orange:        #fbab18 !default;
+$ux-stat-orange:        #fc0 !default;
+$ux-stat-green:         #6cc04a !default;
+$ux-stat-turquoise:     #14a792 !default;
+$ux-stat-green:         #64bbe3 !default;
+
+
+
+
+
+$blue: #017CAD !default;
+$light-blue: #007fc5 !default;
+$green: #00bb00 !default;
+$red: #e74c3c !default;
+$orange: #ff7518 !default;
+$yellow: #efb73e !default;
+$dark-gray: #555 !default;
+$gray: #888 !default;
+$light-gray: #e9e9e9 !default;
+$off-white: #f9f9f9 !default;
+$off-white-alt: #f6f6f6 !default;
+
+$cisco-blue: #049fd9 !default
+$cisco-blue2: #2b5592 !default; // New link color
+$cisco-blue3: #0E748E !default;
+$cisco-green: #abc233 !default;
+$cisco-darkgreen: #487B32 !default; // For filenames and non link URLs
+$med-blue: #34adde !default;
+$white: #ffffff !default;
+$black: #1a1a1a !default;
+$dark-blue: #2b5592 !default;
+$indigo: #005073 !default;
+$dark-gray-1: #39393b !default;
+$dark-gray-2: #58585b !default;
+$dark-gray-3: #626469 !default;
+$dark-gray-4: #7f7f86 !default;
+$med-gray-2: #9e9ea2 !default;
+$med-gray-3: #b0b0b2 !default;
+$med-gray-4: #b6b9bb !default;
+$med-gray-5: #8e9299 !default; // CDC Footer background
+$light-gray-2: #c6c7ca !default;
+$light-gray-3: #dfdfdf !default;
+$light-gray-4: #f5f5f6 !default;
+$light-gray-5: #f2f2f2 !default;
+$pale-gray-1: #e8ebf1 !default;
+$pale-gray-2: #f3f6f9 !default;
+
+$status-blue: #64bbe3 !default; // e2f7fb
+$status-turq: #14a792 !default;
+$status-green: #6cc04a !default;
+$status-red: #cf2030 !default;
+$status-orange: #ff7300 !default;
+$status-yellow: #ffcc00 !default;

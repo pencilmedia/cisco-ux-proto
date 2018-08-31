@@ -1,21 +1,11 @@
+/* BEGIN: main - imports
+// -----------------------------------------------------*/
 
-// CSS Variables
-:root {
-     --font-main: 'Helvetica Nueue', Arial, Helvetica, sans-serif;
-     --text-color: #333;
-}
+/* Cisco UI Kit */
+@import 'cui-kit.scss';
 
-body {
-     font-family: var(--font-main);
-     font-size: 14px;
-     color: var(--text-color, #333);// var, fallback
-     -webkit-font-smoothing: antialiased;
-     -moz-font-smoothing: antialiased;
-     font-smoothing: antialiased;
-}
-main {
-     padding: 1rem;   
-}
-p {
-     margin: 0 0 1.25rem 0;
-}
+/* Custom */
+@import 'var';
+@import 'common';
+@import 'sidenav';
+@import 'header';
