@@ -1,4 +1,4 @@
-# Static Site
+# Cisco UX Proto
 ## Based on Yeoman simple-static-site
 
 Static HTML/CSS/JS site/app for projects or scratchsheet
