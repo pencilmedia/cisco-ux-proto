@@ -8,7 +8,7 @@
  global = {
      init: function() {
          global.initPlugins();
-         global.smoothJump();
+         global.toggleExpand();
          global.linkBehaviors();
      },
      // INIT PLUGINS
@@ -30,18 +30,15 @@
              }
          });
      },
-     smoothJump: function() {
-         $('a[href*="#"]:not([href="#"], a.tab)').on("click", function() {
-             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                 var target = $(this.hash);
-                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                 if (target.length) {
-                     $('html, body').animate({
-                         scrollTop: target.offset().top
-                     }, 750);
-                     return false;
-                 }
-             }
+     toggleExpand: function() {
+         $("[data-toggle='toggle-collapse']").on("click", function(e) {
+            toggler = $(this).parents().eq(1);
+            toggler.toggleClass('collapsed');
+            $(this).parents().siblings('.ux-widget__content').toggleClass('bounceOutDown bounceInDown');
+            // $(document).setTimeout(function () {
+            //     $(this).parents().siblings('.ux-widget__content').toggleClass('collapsed');
+            //   }, 1000);
+
          });
      },
      linkBehaviors: function() {

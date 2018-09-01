@@ -24,16 +24,48 @@
     <div class="ux-wrapper">
         <nav class="ux-wrapper--sidebar">
 
-            <div class="sidebar">
+            <div class="sidebar ux-sidenav sidebar__item_actions">
                 <div class="sidebar__header">
                     <div class="sidebar__header-title">Network Insights</div>
                 </div>
                 <ul>
                     <li class="sidebar__item"><a>Dashboard</a></li>
-                    <li class="sidebar__item"><a>Flow Analytics</a></li>
-                    <li class="sidebar__item"><a>Event Analytics</a></li>
-                    <li class="sidebar__item"><a>Fabric Utilization</a></li>
-                    <li class="sidebar__item"><a>Protocol Statistics</a></li>
+                    <li class="sidebar__item">
+                        <span class="sidebar__item-text">Flow Analytics</span>
+                        <span class="sidebar__item-action">
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-graph"></span></button></a>
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-list-view"></span></button></a>
+                        </span>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="sidebar__item-text">Event Analytics</span>
+                        <span class="sidebar__item-action">
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-graph"></span></button></a>
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-list-view"></span></button></a>
+                        </span>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="sidebar__item-text">Fabric Utilization</span>
+                        <span class="sidebar__item-action">
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-graph"></span></button></a>
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-list-view"></span></button></a>
+                        </span>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="sidebar__item-text">Protocol Statistics</span>
+                        <span class="sidebar__item-action">
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-graph"></span></button></a>
+                            <a class="sidebar-link" aria-current="false" href="#/"><button class="btn btn--icon btn--white-ghost btn--small"><span
+                                        class="icon-list-view"></span></button></a>
+                        </span>
+                    </li>
                     <li class="sidebar__drawer">
                         <a href="#/">Resource Analytics</a>
                         <ul>
@@ -48,42 +80,135 @@
         <div class="ux-wrapper--content">
             <div class="ux-header">
 
-                    <nav class="navbar navbar-expand-lg ux-page-header">
-                        <span class="mr-5">
-                            <button class="btn btn--icon btn--white-ghost btn--small menu-button"><span class="icon-list-menu "></span></button>
-                        </span>
-                        <form class="form-inline mr-auto">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Time Range</label>
-                            <select class="custom-select my-1 mr-5">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Fabric</label>
-                            <select class="custom-select my-1 mr-sm-2">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </form>
-                        <span class="pull-right">
-                            <button class="btn btn--icon btn--white-ghost btn--small"><span class="icon-help "></span></button>
-                            <button class="btn btn--icon btn--white-ghost btn--small"><span class="icon-warning "></span></button>
-                        </span>
-                    </nav>
+                <nav class="navbar navbar-collapse-lg ux-page-header">
+                    <span class="mr-5">
+                        <button class="btn btn--icon btn--white-ghost btn--small menu-button"><span class="icon-list-menu "></span></button>
+                    </span>
+                    <form class="form-inline mr-auto">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Time Range</label>
+                        <select class="custom-select my-1 mr-5">
+                            <option selected>Aug 31 2018, 9:16 AM - Aug 31, 10:16 AM</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Fabric</label>
+                        <select class="custom-select my-1 mr-sm-2">
+                            <option selected>Fabric 1</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </form>
+                    <span class="pull-right">
+                        <button class="btn btn--icon btn--white-ghost btn--small"><span class="icon-help "></span></button>
+                        <button class="btn btn--icon btn--white-ghost btn--small"><span class="icon-warning "></span></button>
+                    </span>
+                </nav>
 
 
             </div>
-            <section class="ux-content">
+            <section class="ux-content ux-dashboard">
+                <h2>Dashboard</h2>
+                <!-- BEGIN: Grid -->
+                <div class="ux-dashboard--grid">
 
-               <h1>Dashboard</h1>
+                    <div class="ux-widget expanded" data-toggle-state="expanded"> <!-- Change class expanded to data-toggle-state for collapse expand JS -->
+                        <header class="ux-widget__header">
+                            <h6 class="ux-widget__title">Fabric Issues by Severity</h6>
+                            <a href="#/" class="ux-widget__toggle" data-toggle="toggle-collapse">
+                                <button class="btn btn--icon btn--small">
+                                    <span class="icon-chevron-up icon-small"></span>
+                                </button>
+                            </a>
+                        </header>
+                        <div class="ux-widget__content animated bounceInUp">
+                            <div class="ux-widget__chart proto-img">
+                                <img src="assets/images/chart-donut-status.png" alt="Donut Chart">
+                            </div>
+                            <div class="issues-stats-counters ux-widget__legend">
+                                <dl class="ux-legend ux-legend__lrg">
+                                    <dt class="status-critical">25</dt>
+                                    <dd>Critical</dd>
+                                    <dt class="status-major">25</dt>
+                                    <dd>Major</dd>
+                                    <dt class="status-minor">25</dt>
+                                    <dd>Minor</dd>
+                                    <dt class="status-neutral">50</dt>
+                                    <dd>Minor</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ux-widget">
+                        <header class="ux-widget__header">
+                            <h6 class="ux-widget__title">
+                                <label>Anomalies by</label>
+                                <select class="custom-select ml-1 ux-form-select">
+                                    <option value="1" selected>Type</option>
+                                    <option value="2">Severity</option>
+                                </select>
+                            </h6>
+                            <a href="#/" class="ux-widget__toggle proto-toggle-collapse" data-id="2">
+                                <button class="btn btn--icon btn--small">
+                                    <span class="icon-chevron-up icon-small"></span>
+                                </button>
+                            </a>
+                        </header>
+                        <div class="ux-widget__content">
+                            <div class="ux-widget__chart proto-img">
+                                <img src="assets/images/chart-donut-types.png" alt="Donut Chart">
+                            </div>
+                            <div class="issues-stats-counters ux-widget__legend">
+                                <dl class="ux-legend ux-legend__standard">
+                                    <dt class="ux-legend-status"><em class="status-dot status-1"></em></dt>
+                                    <dd>CPU &amp; Memory <em>(3)</em></dd>
+                                    <dt class="ux-legend-status"><em class="status-dot status-2"></em></dt>
+                                    <dd>Message Queue <em>(20)</em></dd>
+                                    <dt class="ux-legend-status"><em class="status-dot status-3"></em></dt>
+                                    <dd>Fabric Utilization <em>(18)</em></dd>
+                                    <dt class="ux-legend-status"><em class="status-dot status-4"></em></dt>
+                                    <dd>Statistics <em>(14)</em></dd>
+                                    <dt class="ux-legend-status"><em class="status-dot status-5"></em></dt>
+                                    <dd>Flow <em>(27)</em></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ux-widget">
+                        <header class="ux-widget__header">
+                            <h6 class="ux-widget__title">Fabric Issues by Severity</h6>
+                            <a href="#/" class="ux-widget__toggle proto-toggle-collapse" data-id="3">
+                                <button class="btn btn--icon btn--small">
+                                    <span class="icon-chevron-up icon-small"></span>
+                                </button>
+                            </a>
+                        </header>
+                        <div class="ux-widget__content">
+                            Graph
+                        </div>
+                    </div>
+
+                    <div class="ux-widget">
+                        <header class="ux-widget__header">
+                            <h6 class="ux-widget__title">Anomalies by Type</h6>
+                            <a href="#/" class="ux-widget__toggle proto-toggle-collapse" data-id="4">
+                                <button class="btn btn--icon btn--small">
+                                    <span class="icon-chevron-up icon-small"></span>
+                                </button>
+                            </a>
+                        </header>
+                        <div class="ux-widget__content">
+                            Graph
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END: Grid -->
 
             </section>
-            <footer class="ux-footer">
-                <p>footer</p>
-            </footer>
         </div>
     </div>
 

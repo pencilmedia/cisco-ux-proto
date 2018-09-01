@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="302" height="302" viewBox="0 0 302 302">
+  <defs>
+    <path id="chart-donut-status-a" d="M150,300 C67.1572875,300 0,232.842712 0,150 C0,67.1572875 67.1572875,0 150,0 C232.842712,0 300,67.1572875 300,150 C300,232.842712 232.842712,300 150,300 Z M150,280 C221.797017,280 280,221.797017 280,150 C280,78.2029825 221.797017,20 150,20 C78.2029825,20 20,78.2029825 20,150 C20,221.797017 78.2029825,280 150,280 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <path fill="#D8D8D8" fill-rule="nonzero" stroke="#979797" d="M150,300 C67.1572875,300 0,232.842712 0,150 C0,67.1572875 67.1572875,0 150,0 C232.842712,0 300,67.1572875 300,150 C300,232.842712 232.842712,300 150,300 Z M150,280 C221.797017,280 280,221.797017 280,150 C280,78.2029825 221.797017,20 150,20 C78.2029825,20 20,78.2029825 20,150 C20,221.797017 78.2029825,280 150,280 Z"/>
+    <mask id="chart-donut-status-b" fill="#fff">
+      <use xlink:href="#chart-donut-status-a"/>
+    </mask>
+    <use fill="#D8D8D8" fill-rule="nonzero" xlink:href="#chart-donut-status-a"/>
+    <rect width="158.033" height="155.133" x="148.943" y="-7.422" fill="#E2231A" mask="url(#chart-donut-status-b)"/>
+    <rect width="158.033" height="155.133" x="148.943" y="147.711" fill="#FBAB18"/>
+    <rect width="158.033" height="310.266" x="-9.09" y="-7.422" fill="#FC0"/>
+  </g>
+</svg>

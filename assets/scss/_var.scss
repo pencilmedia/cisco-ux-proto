@@ -31,12 +31,12 @@ $ux-light-gray3:          #dfdfdf !default;
 $ux-light-gray5:          #f2f2f2 !default;
 
 // Status Colors
-$ux-stat-red:           #e2231a !default;
-$ux-stat-orange:        #fbab18 !default;
-$ux-stat-orange:        #fc0 !default;
-$ux-stat-green:         #6cc04a !default;
-$ux-stat-turquoise:     #14a792 !default;
-$ux-stat-green:         #64bbe3 !default;
+$ux-status-red:           #e2231a !default;
+$ux-status-orange:        #fbab18 !default;
+$ux-status-yellow:        #fc0 !default;
+$ux-status-green:         #6cc04a !default;
+$ux-status-turquoise:     #14a792 !default;
+$ux-status-green:         #64bbe3 !default;
 
 
 
@@ -85,3 +85,5 @@ $status-green: #6cc04a !default;
 $status-red: #cf2030 !default;
 $status-orange: #ff7300 !default;
 $status-yellow: #ffcc00 !default;
+
+$borderColor:  $ux-light-gray3;
