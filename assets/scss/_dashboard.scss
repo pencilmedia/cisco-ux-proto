@@ -1,28 +1,38 @@
 /* BEGIN: Dashboard
 // -----------------------------------------------------*/
-
 .ux-dashboard {
-  .ux-dashboard--grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 8px;
-      grid-row-gap: 8px;
-      margin-top: 16px;
-  }
+    .ux-dashboard--grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 8px;
+        margin-top: 16px;
+        .ux-dashboard--grid-col {
+            border: 1px solid red;
+            display: grid;
+            grid-template-rows: auto;
+            grid-row-gap: 8px;
+            height: auto;
+            max-height: 100%;
+            transition: max-height .25s ease-in-out;
+        }
+    }
 }
 
 .ux-widget {
     border-radius: 4px;
     border: 1px solid $borderColor;
     background: $white;
+
     .ux-widget__header {
         display: flex;
         flex-direction: row;
         line-height: 56px;
         padding: 0 16px;
+
         .ux-widget__title {
             line-height: 4;
             flex: 1;
+
             .ux-form-select {
                 width: auto;
                 height: auto;
@@ -30,14 +40,18 @@
                 padding: 4px 8px;
             }
         }
+
         .ux-widget__toggle {
             color: $ux-dark-gray4;
+
             &:hover {
                 text-decoration: none;
             }
+
             .btn {
                 color: $ux-dark-gray4;
                 background: transparent;
+
                 &:hover {
                     color: $ux-indigo-blue;
                     background: $ux-light-blue;
@@ -46,117 +60,146 @@
             }
         }
     }
+
     .ux-widget__content {
         margin: 0 16px 16px 16px;
         display: flex;
         flex-direction: row;
-        .ux-widget__chart, .ux-widget__legend {
+
+        .ux-widget__chart,
+        .ux-widget__legend {
             flex: 1;
         }
+
         .ux-widget__chart {
             text-align: center;
         }
+
         .ux-widget__legend {
             align-self: center;
+
             .ux-legend {
                 width: 75%;
                 min-width: 150px;
                 margin: 0 auto;
+
                 &.ux-legend__standard {
                     display: flex;
                     flex-direction: row;
                     flex-flow: row wrap;
-                    dt, dd {
+
+                    dt,
+                    dd {
                         line-height: 24px;
                         min-height: 24px;
                         margin: 0;
                     }
+
                     .ux-legend-status {
                         flex: 0 0 10%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
+
                         .status-dot {
                             display: inline-block;
                             width: 12px;
                             height: 12px;
                             border-radius: 25px;
                             background: $ux-light-gray2;
+
                             &.status-1 {
                                 background-color: $ux-indigo-blue;
                             }
+
                             &.status-2 {
                                 background-color: $ux-cisco-green;
                             }
+
                             &.status-3 {
                                 background-color: $ux-cisco-blue;
                             }
+
                             &.status-4 {
                                 background-color: $ux-status-yellow;
                             }
+
                             &.status-5 {
                                 background-color: #8F76B6;
                             }
                         }
                     }
+
                     dd {
                         flex: 1 1 90%;
                         font-size: 12px;
                         padding-left: 8px;
-                        > em {
+
+                        >em {
                             font-weight: 600;
                         }
                     }
                 }
+
                 &.ux-legend__lrg {
-                    dt, dd {
+
+                    dt,
+                    dd {
                         text-align: center;
                     }
+
                     dt {
                         font-size: 3rem;
                         font-weight: 100;
                     }
+
                     dd {
                         color: $ux-medium-gray2;
                         font-size: 12px;
                         font-weight: 600;
                         text-transform: uppercase;
                     }
+
                     .status-critical {
                         color: $ux-status-red;
                     }
+
                     .status-major {
                         color: $ux-status-orange;
                     }
+
                     .status-minor {
                         color: $ux-status-yellow;
                     }
+
                     .status-neutral {
                         color: $ux-status-turquoise;
                     }
                 }
             }
+
             .issues-counter-group {
                 border: 1px solid black;
             }
         }
+
         .proto-img {
             display: inline-block;
             max-width: 300px;
-            > img {
+
+            >img {
                 width: 100%;
             }
         }
     }
 
-
     // ANIMATION: animated collapse toggle
-    
     overflow: auto; // hides contents
 
     &.expanded {
         max-height: 100%;
         transition: max-height .25s ease-in;
+
         .ux-widget__content {
             height: auto;
             max-height: 100%;
@@ -164,10 +207,12 @@
             overflow: auto;
         }
     }
-    &.collapsed  {
+
+    &.collapsed {
         max-height: 56px;
         transition: max-height .25s ease-out;
         overflow: hidden;
+
         .ux-widget__content.collapsed {
             max-height: 0;
             transition: max-height .25s ease-out;

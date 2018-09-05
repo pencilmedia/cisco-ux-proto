@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="32" viewBox="0 0 48 32">
+  <defs>
+    <path id="icon_trend_down-a" d="M37.1463439,6.95894367 L30.1874002,0 L48,0 L48,17.8125998 L41.3469053,11.159505 L26.0828558,27.4186521 L17.5878777,18.4935471 L4.19291245,31.8531203 L0,27.6491001 L17.698372,9.99749047 L26.0531647,18.7753121 L37.1463439,6.95894367 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-1 -8)">
+    <rect width="50" height="48"/>
+    <g transform="translate(1 8)">
+      <mask id="icon_trend_down-b" fill="#fff">
+        <use xlink:href="#icon_trend_down-a"/>
+      </mask>
+      <use fill="#FAAC25" fill-rule="nonzero" xlink:href="#icon_trend_down-a"/>
+      <g fill="#58585B" mask="url(#icon_trend_down-b)">
+        <rect width="48" height="48" transform="translate(0 -8)"/>
+      </g>
+    </g>
+  </g>
+</svg>

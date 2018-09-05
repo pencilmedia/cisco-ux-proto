@@ -4,7 +4,7 @@
 .ux-sidenav {
     &.sidebar__item_actions {
         ul {
-            li {
+            .sidebar__item {
                 display: flex;
                 align-items: center;
                 height: 40px;
@@ -23,6 +23,18 @@
                         text-decoration: none;
                     }
                 }
+                &.active {
+                    background: rgba(255, 255, 255, .3);
+                    box-shadow: $sidebar-item-border-selected;
+                    text-decoration: none;
+                    .sidebar-link.active {
+                        .btn--icon {    
+                            color: $ux-indigo-blue;
+                            background: rgba(255, 255, 255, .8);
+                            border: 1px solid $ux-vibrant-blue;
+                        }
+                    }
+                }
                 .sidebar__item-text {
                    padding: 0 20px;
                 }
@@ -31,12 +43,15 @@
                         padding: 0 4px;
                         background: none;
                         box-shadow: none;
-                        .btn--small {
+                        .btn--white-ghost {
                             font-size: 13px;
                             height: 24px;
                             min-width: 24px;
                             max-width: 24px;
                             box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+                        }
+                        &.active {
+
                         }
                     }
                 }

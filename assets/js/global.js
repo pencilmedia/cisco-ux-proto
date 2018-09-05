@@ -34,7 +34,7 @@
          $("[data-toggle='toggle-collapse']").on("click", function(e) {
             toggler = $(this).parents().eq(1);
             toggler.toggleClass('collapsed');
-            $(this).parents().siblings('.ux-widget__content').toggleClass('bounceOutDown bounceInDown');
+            $(this).parents().siblings('.ux-widget__content').toggleClass('zoomOutDown zoomInDown');
             // $(document).setTimeout(function () {
             //     $(this).parents().siblings('.ux-widget__content').toggleClass('collapsed');
             //   }, 1000);
