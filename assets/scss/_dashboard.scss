@@ -51,11 +51,13 @@
             .btn {
                 color: $ux-dark-gray4;
                 background: transparent;
-
                 &:hover {
                     color: $ux-indigo-blue;
                     background: $ux-light-blue;
                     transition: .5s;
+                }
+                &:focus {
+                    box-shadow: none;
                 }
             }
         }

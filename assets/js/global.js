@@ -35,7 +35,11 @@
             thisThing = $(this);
             toggler = thisThing.parents().eq(1);
             toggler.toggleClass('collapsed');
+
+            // 1. Toggle icon button up/down
+            $(this).find('.icon-small').toggleClass('icon-chevron-up icon-chevron-down');
             
+            // 2. Animate content
             if ( $(this).parents().siblings('.ux-widget__content').hasClass('fadeOut') ) {
                 setTimeout(function () { 
                     // Expand - Delay change class (showing content) to allow .25s transition to run
