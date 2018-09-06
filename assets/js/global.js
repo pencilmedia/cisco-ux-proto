@@ -32,13 +32,19 @@
      },
      toggleExpand: function() {
          $("[data-toggle='toggle-collapse']").on("click", function(e) {
-            toggler = $(this).parents().eq(1);
+            thisThing = $(this);
+            toggler = thisThing.parents().eq(1);
             toggler.toggleClass('collapsed');
-            $(this).parents().siblings('.ux-widget__content').toggleClass('zoomOutDown zoomInDown');
-            // $(document).setTimeout(function () {
-            //     $(this).parents().siblings('.ux-widget__content').toggleClass('collapsed');
-            //   }, 1000);
-
+            
+            if ( $(this).parents().siblings('.ux-widget__content').hasClass('fadeOut') ) {
+                setTimeout(function () { 
+                    // Expand - Delay change class (showing content) to allow .25s transition to run
+                    thisThing.parents().siblings('.ux-widget__content').toggleClass('fadeOut fadeIn');
+                }, 250);
+            } else {
+                // Collapse content - No Delay
+                thisThing.parents().siblings('.ux-widget__content').toggleClass('fadeOut fadeIn');
+            }
          });
      },
      linkBehaviors: function() {
