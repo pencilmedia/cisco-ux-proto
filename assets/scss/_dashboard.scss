@@ -4,7 +4,7 @@
     .ux-dashboard--grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 8px;
+        grid-gap: 8px;
         margin-top: 16px;
         .ux-dashboard--grid-col {
             border: 1px solid red;
@@ -22,7 +22,7 @@
     border-radius: 4px;
     border: 1px solid $borderColor;
     background: $white;
-
+    transition: .25s ease-in-out;
     .ux-widget__header {
         display: flex;
         flex-direction: row;
@@ -62,7 +62,6 @@
             }
         }
     }
-
     .ux-widget__content {
         margin: 0 16px 16px 16px;
         display: flex;
@@ -195,9 +194,8 @@
         }
     }
 
-    // ANIMATION: animated collapse toggle
-    overflow: auto; // hides contents
-
+    // ANIMATION
+    // animated collapsible widgets
     &.expanded {
         max-height: 100%;
         transition: max-height .25s ease-in;
@@ -211,6 +209,7 @@
     }
 
     &.collapsed {
+        overflow: auto; // hides contents
         max-height: 56px;
         transition: max-height .25s ease-out;
         overflow: hidden;
