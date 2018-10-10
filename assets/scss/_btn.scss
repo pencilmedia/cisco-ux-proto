@@ -1,0 +1,32 @@
+/* -------------------------------- 
+Buttons
+-------------------------------- */
+
+.ux-btn--ghost {
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: 24px;
+  border: 1px solid $ux-white;
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+  padding: 8px;
+  text-align: start;
+  max-width: none;
+  outline: none;
+  [class^=icon-] {
+      margin: 0 8px;
+  }
+}
+select {
+  &.ux-btn--ghost {
+    width: auto;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid $ux-white;
+    font-size: 14px;
+    height: 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}

@@ -17,7 +17,7 @@ To build execute:
 
 To test and dev
 
-    $ grunt run
+    $ grunt
 
     OR 
 
@@ -28,5 +28,9 @@ To test and dev
 To clean build:
 
     $ npm run clean
+
+    or 
+
+    grunt build
 
 
