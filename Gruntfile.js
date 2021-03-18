@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
 	'use strict';
+	
 
 	var stylelintConfig = {
 		"rules": {
@@ -27,6 +28,7 @@ module.exports = function (grunt) {
 		}
 	}
 
+	const sass = require('node-sass');
 	grunt.initConfig({
 		includereplace: {
 			your_target: {
@@ -105,7 +107,9 @@ module.exports = function (grunt) {
 
 		sass: {
 			options: {
-				sourceMap: true
+				implementation: sass,
+				sourceMap: true,
+				quiet: true // stop depreciation errors
 			},
 			dist: {
 				files: {
@@ -158,7 +162,7 @@ module.exports = function (grunt) {
 					destPrefix: 'dist/assets'
 				},
 				files: {
-					'js/jquery.slim.min.js': 'node_modules/jquery/dist/jquery.slim.min.js',
+					// 'js/jquery.slim.min.js': 'node_modules/jquery/dist/jquery.slim.min.js',
 					'js/fastclick.js': 'node_modules/fastclick/lib/fastclick.js'
 				}
 			}
